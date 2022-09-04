@@ -8,7 +8,9 @@
   --Very-dark-blue-1: hsl(215, 32%, 27%);
   --White: hsl(0, 0%, 100%);
 }
-
+h1{
+  margin:0;
+}
 * {
   box-sizing: border-box;
 }

@@ -1,0 +1,203 @@
+:root {
+  --Soft-blue: hsl(215, 51%, 70%);
+  --Cyan: hsl(178, 100%, 50%);
+
+  --Very-dark-blue-4: hsl(217, 54%, 10%);
+  --Very-dark-blue-3: hsl(217, 54%, 11%);
+  --Very-dark-blue-2: hsl(216, 50%, 16%);
+  --Very-dark-blue-1: hsl(215, 32%, 27%);
+  --White: hsl(0, 0%, 100%);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Outfit', sans-serif;
+  background-color: var(--Very-dark-blue-3);
+  display: grid;
+  place-items: center;
+  height: 100vh;
+}
+
+/*Start the main section */
+main {
+  width: min(320px, 90vw);
+  background-color: var(--Very-dark-blue-2);
+  border-radius: .875rem;
+  padding: 1.5rem;
+  box-shadow: 0px 25px 2px 18px var(--Very-dark-blue-4);
+}
+
+main h2 {
+  color: white;
+}
+
+.hover {
+  transition: all 400ms ease-in-out;
+}
+
+.hover:hover {
+  color: var(--Cyan);
+}
+
+main>p {
+  color: var(--Soft-blue);
+}
+
+main div .hero {
+  width: 100%;
+  display: block;
+}
+
+main a {
+  text-decoration: none;
+  color: inherit
+}
+
+.hero-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: .875rem;
+}
+
+.hero-card:hover .overlay {
+  opacity: .4;
+}
+
+.hero-card:hover .eye {
+  opacity: 1;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--Cyan);
+  opacity: 0;
+  transition: all ease-in-out 400ms;
+}
+
+.eye {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: all ease-in-out 400ms;
+}
+
+.myDiv {
+  display: flex;
+}
+
+.myDiv img {
+  margin-right: 3px;
+}
+
+.myDiv span {
+  display: flex;
+  justify-content: baseline;
+  align-items: center;
+}
+
+.right {
+  margin-left: auto;
+  color: var(--Soft-blue);
+}
+
+.left {
+  color: var(--Cyan);
+}
+
+.bottom {
+  border-top: 1px solid var(--Very-dark-blue-1);
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  padding-top: 10px;
+}
+
+.bottom img {
+  margin-top: 1px;
+  margin-right: 1rem;
+  width: 35px;
+  border: 1px solid var(--White);
+  border-radius: 50%;
+}
+
+.bottom p {
+  color: var(--Soft-blue);
+}
+
+.bottom p span {
+  color: var(--White);
+}
+
+/*Styles for attribution*/
+
+@keyframes spout-out {
+
+  from {
+    width: 1.3ch
+  }
+
+  to {
+    width: 39.5ch
+  }
+
+
+}
+
+@keyframes spout-in {
+
+  from {
+    width: 39.5ch
+  }
+
+  to {
+    width: 1.3ch
+  }
+
+
+}
+
+.attribution {
+  position: fixed;
+  bottom: 10px;
+  left: 20px;
+  width: 39.5ch;
+  height: 2ch;
+  overflow: hidden;
+  background-color: white;
+  animation: spout-in 2s 1s forwards;
+
+}
+
+.attribution a {
+  cursor: pointer;
+}
+
+.attribution::after {
+  content: '\203A';
+  font-size: 1.6875rem;
+  position: absolute;
+  top: -50%;
+  display: block;
+  background-color: white;
+  right: -2px;
+  width: 1.1rem;
+  text-align: center;
+  text-indent: 2px;
+  height: 2ch;
+}
+
+
+.attribution:hover {
+  animation: spout-out 2s forwards;
+}
